@@ -3,7 +3,7 @@ import sys
 
 sys.path.append(os.path.dirname(__file__) + "/../")
 
-from scipy.misc import imread
+from scipy.misc.pilutil import imread
 
 from util.config import load_config
 from nnet import predict
