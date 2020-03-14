@@ -10,7 +10,7 @@ from nnet import predict
 from util import visualize
 from dataset.pose_dataset import data_to_input
 from ludwig import visualize
-
+from numpy import array
 
 cfg = load_config("demo/pose_cfg.yaml")
 
