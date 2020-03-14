@@ -249,7 +249,7 @@ class PoseDataset:
         im_file = data_item.im_path
         logging.debug('image %s', im_file)
         logging.debug('mirror %r', mirror)
-        image = io.imread(im_file, 'RGB')
+        image = imread(im_file, 'RGB')
 
         if self.has_gt:
             joints = np.copy(data_item.joints)
