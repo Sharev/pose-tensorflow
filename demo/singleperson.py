@@ -19,7 +19,7 @@ sess, inputs, outputs = predict.setup_pose_prediction(cfg)
 
 # Read image from file
 file_name = "demo/image.png"
-image = io.imread(file_name, mode='RGB')
+image = io.imread(file_name, 'RGB')
 
 image_batch = data_to_input(image)
 
