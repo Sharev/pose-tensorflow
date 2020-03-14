@@ -7,7 +7,8 @@ from numpy import array as arr
 from numpy import concatenate as cat
 
 import scipy.io as sio
-from scipy.misc import imread, imresize
+from skimage import io
+#from scipy.misc import imread, imresize
 
 
 class Batch(Enum):
@@ -248,7 +249,7 @@ class PoseDataset:
         im_file = data_item.im_path
         logging.debug('image %s', im_file)
         logging.debug('mirror %r', mirror)
-        image = imread(im_file, mode='RGB')
+        image = io.imread(im_file, 'RGB')
 
         if self.has_gt:
             joints = np.copy(data_item.joints)
@@ -259,7 +260,7 @@ class PoseDataset:
             if self.has_gt:
                 joints[:, 1:3] -= crop[0:2].astype(joints.dtype)
 
-        img = imresize(image, scale) if scale != 1 else image
+        img = io.imresize(image, scale) if scale != 1 else image
         scaled_img_size = arr(img.shape[0:2])
 
         if mirror:
