@@ -260,7 +260,7 @@ class PoseDataset:
             if self.has_gt:
                 joints[:, 1:3] -= crop[0:2].astype(joints.dtype)
 
-        img = io.imresize(image, scale) if scale != 1 else image
+        img = io.resize(image, scale) if scale != 1 else image
         scaled_img_size = arr(img.shape[0:2])
 
         if mirror:
