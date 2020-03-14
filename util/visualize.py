@@ -2,6 +2,7 @@ import math
 
 import numpy as np
 from skimage import io, transform
+from scipy.misc import imread, imresize
 #from scipy.misc import imresize
 import matplotlib
 matplotlib.use('TkAgg')
