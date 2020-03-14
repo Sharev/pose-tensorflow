@@ -8,7 +8,7 @@ from numpy import concatenate as cat
 
 import scipy.io as sio
 from skimage import io
-#from scipy.misc import imread, imresize
+from scipy.misc import imread, imresize
 
 
 class Batch(Enum):
