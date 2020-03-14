@@ -23,7 +23,7 @@ image = io.imread(file_name, 'RGB')
 
 image_batch = data_to_input(image)
 
-imageChanged = array(image_batch).reshape(1, 512,274,3)
+imageChanged = array(image_batch).reshape(1, 512,274,1)
 
 # Compute prediction with the CNN
 outputs_np = sess.run(outputs, feed_dict={inputs: imageChanged})
