@@ -3,7 +3,7 @@ import sys
 
 sys.path.append(os.path.dirname(__file__) + "/../")
 
-from matplotlib.pyplot import imread
+from skimage import io
 
 from util.config import load_config
 from nnet import predict
@@ -19,7 +19,7 @@ sess, inputs, outputs = predict.setup_pose_prediction(cfg)
 
 # Read image from file
 file_name = "demo/image.png"
-image = imread(file_name, mode='RGB')
+image = io.imread(file_name, mode='RGB')
 
 image_batch = data_to_input(image)
 
