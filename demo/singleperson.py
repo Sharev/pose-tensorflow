@@ -19,14 +19,14 @@ sess, inputs, outputs = predict.setup_pose_prediction(cfg)
 
 # Read image from file
 file_name = "demo/image.png"
-image = io.imread(file_name, 'RGB')
+image = io.imread(file_name)
 
 image_batch = data_to_input(image)
 
-imageChanged = array(image_batch).reshape(1, 512,274,1)
+#imageChanged = array(image_batch).reshape(1, 512,274,3)
 
 # Compute prediction with the CNN
-outputs_np = sess.run(outputs, feed_dict={inputs: imageChanged})
+outputs_np = sess.run(outputs, feed_dict={inputs: image_batch})
 scmap, locref, _ = predict.extract_cnn_output(outputs_np, cfg)
 
 # Extract maximum scoring location from the heatmap, assume 1 person
